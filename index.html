@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <title>Al-Madrasat Nuru Dini Ndongoni</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f8f6;
+      color: #173b2a;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #063b2a, #087a52);
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      border: 2px solid #d4af37;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .logo h1 {
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .logo span {
+      color: #f2d36b;
+      font-size: 12px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #f2d36b;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      background:
+        linear-gradient(rgba(3,43,30,0.84), rgba(3,70,45,0.88)),
+        radial-gradient(circle at center, #15976b, #032d20);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "☪";
+      position: absolute;
+      font-size: 350px;
+      color: rgba(255,255,255,0.025);
+      right: -70px;
+      top: -70px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      z-index: 2;
+    }
+
+    .bismillah {
+      color: #f2d36b;
+      font-size: 25px;
+      margin-bottom: 15px;
+      font-family: Georgia, serif;
+    }
+
+    .hero h2 {
+      font-size: clamp(32px, 6vw, 64px);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .hero h3 {
+      color: #f2d36b;
+      font-size: 23px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 18px;
+      color: #e5f3ec;
+    }
+
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #d4af37;
+      color: #173b2a;
+    }
+
+    .btn-primary:hover {
+      background: #f2d36b;
+      transform: translateY(-3px);
+    }
+
+    .btn-warning:hover {
+      background: #f2d36b;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #063b2a;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 75px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      color: #075b3c;
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #687d73;
+    }
+
+    /* ABOUT */
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 45px;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .about-card {
+      background: #f0f7f3;
+      padding: 35px;
+      border-left: 5px solid #d4af37;
+      border-radius: 10px;
+    }
+
+    .about-card h3 {
+      color: #075b3c;
+      margin-bottom: 15px;
+      font-size: 25px;
+    }
+
+    .quran {
+      background: linear-gradient(135deg, #075b3c, #0b8b5c);
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .quran .arabic {
+      font-size: 30px;
+      font-family: Georgia, serif;
+      color: #f2d36b;
+      margin-bottom: 20px;
+    }
+
+    /* PROGRAMS */
+    .programs {
+      background: #f5f8f6;
+    }
+
+    .cards {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      text-align: center;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .card-icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #075b3c;
+      margin-bottom: 10px;
+    }
+
+    /* VALUES */
+    .values {
+      background: white;
+    }
+
+    .values-grid {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .value {
+      text-align: center;
+      padding: 25px 15px;
+      border-radius: 12px;
+      background: #f5f8f6;
+    }
+
+    .value strong {
+      display: block;
+      color: #075b3c;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, #063b2a, #087a52);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: auto;
+      color: #dceee5;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #f5f8f6;
+    }
+
+    .contact-grid {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contact-item {
+      background: white;
+      padding: 25px;
+      text-align: center;
+      border-radius: 12px;
+    }
+
+    .contact-item h3 {
+      color: #075b3c;
+      margin-bottom: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #032d20;
+      color: #cfe2d9;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    footer strong {
+      color: #f2d36b;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .about-grid,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .logo h1 {
+        font-size: 15px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img class="logo-icon" src="logo1.png">
+      <div>
+        <h1>AL-MADRASAT NURU DINI</h1>
+        <span>NDONGONI</span>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#nyumbani">Nyumbani</a></li>
+        <li><a href="#kuhusu">Kuhusu Sisi</a></li>
+        <li><a href="#programu">Programu</a></li>
+        <li><a href="#mawasiliano">Mawasiliano</a></li>
+        <li><a href="#taarifa">Taarifa</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="nyumbani">
+    <div class="hero-content">
+
+      <div class="bismillah">
+        بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+      </div>
+
+      <h2>Al-Madrasat Nuru Dini</h2>
+
+      <h3>NDONGONI</h3>
+
+      <p>
+        Karibu katika kituo cha elimu ya dini kinacholenga
+        kulea kizazi chenye elimu, maadili mema, hofu ya Allah
+        na uadilifu katika jamii.
+      </p>
+
+      <div class="buttons">
+        <a href="#kuhusu" class="btn btn-primary">
+          Jifunze Zaidi
+        </a>
+
+        <a href="#taarifa" class="btn btn-warning">
+            Taarifa Mpya
+        </a>
+
+        <a href="#mawasiliano" class="btn btn-outline">
+          Wasiliana Nasi
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="kuhusu">
+
+    <div class="section-title">
+      <h2>Kuhusu Madrasa</h2>
+      <p>Elimu ya dini kwa ajili ya maisha yenye nuru</p>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-card">
+        <h3>Karibu Al-Madrasat Nuru Dini</h3>
+
+        <p>
+          Al-Madrasat Nuru Dini Ndongoni ni madrasa inayolenga
+          kutoa elimu bora ya Kiislamu na malezi mema kwa watoto,
+          vijana na jamii kwa ujumla.
+        </p>
+
+        <br>
+
+        <p>
+          Tunazingatia elimu ya Qur'an, Hadithi, Fiqhi, Aqida,
+          Akhlaq na misingi muhimu ya Dini ya Kiislamu.
+        </p>
+      </div>
+
+      <div class="quran">
+        <div class="arabic">
+          وَقُلْ رَبِّ زِدْنِي عِلْمًا
+        </div>
+
+        <p>
+          “Na sema: Mola wangu! Nizidishie elimu.”
+        </p>
+
+        <small>
+          Qur'an 20:114
+        </small>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TAARIFA MPYA-->
+   <section class="taarifa" id="taarifa">
+
+    <div class="section-title">
+      <h2>TAARIFA</h2>
+    
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-card">
+        <h3>Taarifa kuhusu Maulidi na michango yake.</h3>
+
+         <p>Marsa inawaarifu wazazi na walezi pamoja na wanajamii kwa ujumla kua ile shughuli yetu ya Kuadhimisha kuzaliwa kwa Bwana Mtume (S.A.W) itafanyika siku ya Jumamosi ya Mwezi 16 mfunguo 6 sawa na tarehe 26/8/2026. Hivo michango inahimizwa kwa wazazi na walezi pamoja na jamii kwa ujumla. Michango ifikishwe Madrasa moja kwa moja na kwa walio mbali unaweza kutuma kupitia nama 0712426731 jina Seif Othman</p>
+
+        <br>
+      </div>
+
+      <div class="quran">
+        <div class="arabic">
+          وَوَمَا تُقَدِّمُوا لِأَنفُسِكُم مِّنْ خَيْرٍ تَجِدُوهُ عِندَ اللَّهِ ۗ هُوَ خَيْرًا وَأَعْظَمَ أَجْرًا
+        </div>
+
+        <p>
+          “Na kheri yoyote mnayojitangulizia kwa ajili ya nafsi zenu, mtakuta kwa Mwenyezi Mungu. Hiyo ndiyo bora na yenye malipo makubwa zaidi.”
+        </p>
+
+        <small>
+          Qur'an 73:20
+        </small>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROGRAMS -->
+  <section class="programs" id="programu">
+
+    <div class="section-title">
+      <h2>Programu Zetu</h2>
+      <p>Maeneo muhimu ya kujifunza</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-icon">📖</div>
+        <h3>Qur'an Tukufu</h3>
+        <p>
+          Kujifunza kusoma Qur'an, Tajwid, kuhifadhi na kuelewa
+          misingi ya ujumbe wa Qur'an.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🕌</div>
+        <h3>Elimu ya Dini</h3>
+        <p>
+          Mafunzo ya Aqida, Fiqhi, Hadithi, Sirah na mambo
+          muhimu ya maisha ya Kiislamu.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🌙</div>
+        <h3>Malezi & Akhlaq</h3>
+        <p>
+          Kukuza tabia njema, heshima, nidhamu, uaminifu na
+          maadili ya Kiislamu.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values">
+
+    <div class="section-title">
+      <h2>Maadili Yetu</h2>
+      <p>Misingi tunayoipa kipaumbele</p>
+    </div>
+
+    <div class="values-grid">
+
+      <div class="value">
+        <div>📚</div>
+        <strong>Elimu</strong>
+        <p>Elimu yenye manufaa kwa dunia na Akhera.</p>
+      </div>
+
+      <div class="value">
+        <div>🤲</div>
+        <strong>Ucha Mungu</strong>
+        <p>Kumjenga mwanafunzi katika kumcha Allah.</p>
+      </div>
+
+      <div class="value">
+        <div>❤️</div>
+        <strong>Akhlaq</strong>
+        <p>Tabia njema na heshima kwa wengine.</p>
+      </div>
+
+      <div class="value">
+        <div>🤝</div>
+        <strong>Umoja</strong>
+        <p>Kujenga jamii yenye upendo na mshikamano.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <h2>Elimu ni Nuru</h2>
+
+    <p>
+      Tushirikiane katika kuandaa kizazi chenye elimu ya dini,
+      maadili mema na mchango chanya katika jamii.
+    </p>
+
+    <div class="buttons">
+      <a href="#mawasiliano" class="btn btn-primary">
+        Wasiliana Nasi
+      </a>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="mawasiliano">
+
+    <div class="section-title">
+      <h2>Mawasiliano</h2>
+      <p>Karibu kuwasiliana na Al-Madrasat Nuru Dini Ndongoni</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-item">
+        <h3>📍 Mahali</h3>
+        <p>Ndongoni</p>
+      </div>
+
+      <div class="contact-item">
+        <h3>📞 Simu</h3>
+        <p>+255 773846871</p>
+      </div>
+
+      <div class="contact-item">
+        <h3>✉️ Barua Pepe</h3>
+        <p>almadrasatnurudini1967@gmail.com</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © 2026 <strong>Al-Madrasat Nuru Dini Ndongoni</strong>.
+      Haki zote zimehifadhiwa.
+    </p>
+
+    <p>
+      بِسْمِ اللَّهِ نَبْدَأُ وَبِالْعِلْمِ نَرْتَقِي
+    </p>
+
+  </footer>
+
+</body>
+</html>
